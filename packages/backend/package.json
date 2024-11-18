@@ -1,0 +1,19 @@
+{
+	"name": "@tra/backend",
+	"version": "1.0.0",
+	"scripts": {
+		"build": "pnpm build:esm && pnpm run create-symlink:esm",
+		"build:esm": "tsc --project ./tsconfig.json",
+		"create-symlink:esm": "export ROOT=$(git rev-parse --show-toplevel);ln -snf $ROOT/packages/backend/dist/src $ROOT",
+		"typecheck": "tsc --noEmit",
+		"dev": "tsc --watch "
+	},
+	"dependencies": {
+		"@forge/resolver": "1.6.1",
+		"zod": "3.23.8"
+	},
+	"devDependencies": {
+		"typescript": "5.6.3"
+	},
+	"license": "MIT"
+}

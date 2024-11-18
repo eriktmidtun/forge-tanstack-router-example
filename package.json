@@ -1,0 +1,15 @@
+{
+	"name": "tra",
+	"version": "1.0.0",
+	"private": true,
+	"scripts": {
+		"dev": "pnpm run -r dev",
+		"build": "pnpm i && pnpm run -r build",
+		"typecheck": "pnpm run --parallel typecheck",
+		"setup": "cp manifest.base.yml manifest.yml && forge register && pnpm build"
+	},
+	"devDependencies": {
+		"@forge/cli": "latest"
+	},
+	"packageManager": "pnpm@9.13.2"
+}

@@ -1,0 +1,32 @@
+modules:
+  jira:adminPage:
+    - key: tanstack-router-adapter-hello-world-admin-page-jira
+      resource: main
+      layout: blank
+      resolver:
+        function: resolver
+      title: tanstack-router-adapter
+  confluence:globalSettings:
+    - key: tanstack-router-adapter-hello-world-admin-page-confluence
+      resource: main
+      layout: blank
+      title: tanstack-router-adapter
+      resolver:
+        function: resolver
+  function:
+    - key: resolver
+      handler: resolvers.handler
+resources:
+  - key: main
+    path: packages/frontend/dist
+    tunnel:
+      port: 3000
+app:
+  runtime:
+    name: nodejs20.x
+  id: ari:cloud:ecosystem::app/APP_ID # Replace APP_ID with your app ID or create new with pnpm setup
+
+permissions:
+  content:
+    styles:
+      - 'unsafe-inline'
